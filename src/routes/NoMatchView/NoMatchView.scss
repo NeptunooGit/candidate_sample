@@ -1,0 +1,108 @@
+@import 'styles/config/config';
+
+.no-match-view {
+  padding: 8rem 0;
+  text-align: center;
+
+  &__inner {
+    margin: 0 auto;
+    max-width: 35rem;
+    padding: 0 2.5rem;
+
+    @include media-query('x-small') {
+      max-width: 50rem;
+      padding: 0 3.5rem;
+    }
+
+    @include media-query('large') {
+      padding: 0 5rem;
+    }
+  }
+
+  h1 {
+    color: $primary-color;
+    font-size: 7rem;
+    line-height: 0.7;
+    margin-bottom: 2rem;
+
+    @include media-query('x-small') {
+      font-size: 8rem;
+    }
+
+    @include media-query('medium') {
+      font-size: 10rem;
+    }
+  }
+
+  h4 {
+    color: $primary-color;
+    font-size: 1.6rem;
+    letter-spacing: 0.05rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+
+    @include media-query('x-small') {
+      font-size: 1.7rem;
+      margin-bottom: 3rem;
+    }
+
+    @include media-query('medium') {
+      font-size: 1.8rem;
+    }
+  }
+
+  p {
+    border-bottom: 0.1rem solid $grey-color;
+    border-top: 0.1rem solid $grey-color;
+    font-size: 1.2rem;
+    letter-spacing: 0.05rem;
+    line-height: 1.5;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem 0;
+
+    @include media-query('x-small') {
+      font-size: 1.3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    @include media-query('medium') {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__button {
+    border-color: $secondary-color;
+    color: $secondary-color;
+
+    &:hover,
+    &:focus {
+      background-color: $secondary-color;
+      border-color: $secondary-color;
+      color: #fff;
+
+      svg {
+        fill: #fff;
+        transform: rotate(180deg) translate3d(0.2rem, 0, 0);
+      }
+    }
+
+    svg {
+      display: inline-block;
+      fill: $secondary-color;
+      height: 0.8rem;
+      margin-right: 0.7rem;
+      transform: rotate(180deg) translate3d(-0.1rem, 0, 0);
+      transition: fill $transition-speed, transform $transition-speed;
+      width: 2rem;
+
+      @include media-query('medium') {
+        height: 1rem;
+        width: 2.6rem;
+      }
+    }
+  }
+
+  @include media-query('medium') {
+    padding: 10rem 0;
+  }
+}

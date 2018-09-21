@@ -1,0 +1,292 @@
+@import 'styles/config/config';
+
+.general-view {
+  &__body {
+    padding: 6rem 0;
+
+    &__inner {
+      margin: 0 auto;
+      max-width: 100rem;
+      padding: 0 3.5rem;
+
+      @include media-query('x-small') {
+        padding: 0 5rem;
+      }
+
+      @include media-query('large') {
+        padding: 0 6rem;
+      }
+    }
+
+    h1 {
+      color: $grey-dark-color;
+      font-family: $headline-font;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.1rem;
+      line-height: 1.3;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      text-transform: uppercase;
+
+      @include media-query('x-small') {
+        font-size: 2.5rem;
+      }
+
+      @include media-query('small') {
+        font-size: 3rem;
+        margin-bottom: 3.5rem;
+      }
+
+      @include media-query('large') {
+        font-size: 3.5rem;
+      }
+    }
+
+    p,
+    li {
+      font-size: 1.4rem;
+      letter-spacing: 0.03rem;
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+
+      &:last-child {
+        margin: 0;
+      }
+
+      @include media-query('x-small') {
+        font-size: 1.5rem;
+      }
+
+      @include media-query('medium') {
+        font-size: 1.6rem;
+      }
+    }
+
+    .number {
+      font-family: $headline-font;
+      font-size: 1.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      @include media-query('x-small') {
+        font-size: 1.8rem;
+      }
+
+      @include media-query('medium') {
+        font-size: 1.9rem;
+      }
+    }
+
+    .letter {
+      font-weight: 700;
+    }
+
+    .tab {
+      margin-bottom: 1.75rem;
+      padding-left: 1.5rem;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 2rem;
+      margin-bottom: 1.75rem;
+    }
+
+    a {
+      border-bottom: 0.2rem solid transparent;
+      color: $secondary-color;
+      display: inline-block;
+      transition: border-color $transition-speed;
+      word-break: break-all;
+    }
+
+    a:hover {
+      border-color: $secondary-color;
+    }
+
+    .column-wrapper {
+      @extend %clearfix;
+      margin: 0 -2rem;
+      
+      @include media-query('medium') {
+        padding-left: 7%;
+      }
+    }
+
+    .column {
+      float: left;
+      padding: 0 2rem;
+      width: 100%;
+
+      ul {
+        list-style-type: none;
+        margin: 1rem 0 2rem 0;
+      }
+
+      ul li {
+        font-size: 1.4rem;
+        margin: 0;
+      }
+
+      @include media-query('medium') {
+        width: 33.3333333%;
+      }
+    }
+
+    .letter-large {
+      color: $primary-color;
+      font-family: $headline-font;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 auto;
+      margin-top: -2.5rem;
+      max-width: 50rem;
+  
+      @include media-query('medium') {
+        max-width: 70rem;
+      }
+    }
+  
+    .icon-row {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+
+      @include media-query('x-small') {
+        margin-top: 2.5rem;
+      }
+    }
+  
+    .icon {
+      display: block;
+      margin-top: 2.5rem;
+      text-align: center;
+      width: 100%;
+  
+      svg {
+        fill: $grey-medium-color;
+        max-width: 12rem;
+      }
+
+      @include media-query('x-small') {
+        display: inline-block;
+        margin: 0 1rem;
+        width: auto;
+      }
+  
+      @include media-query('small') {
+        margin: 0 2rem;
+  
+        svg {
+          max-width: 14rem;
+        }
+      }
+  
+      @include media-query('large') {
+        margin: 0 3rem;
+  
+        svg {
+          max-width: 17rem;
+        }
+      }
+    }
+
+    .icon--aarp svg {
+      max-height: 1.3rem;
+      max-width: 6rem;
+  
+      @include media-query('small') {
+        max-height: 1.6rem;
+        max-width: 7rem;
+      }
+  
+      @include media-query('large') {
+        max-height: 1.9rem;
+        max-width: 9rem;
+      }
+    }
+  
+    .icon--aetna svg {
+      max-height: 1.5rem;
+      max-width: 7rem;
+  
+      @include media-query('small') {
+        max-height: 1.7rem;
+        max-width: 8rem;
+      }
+  
+      @include media-query('large') {
+        max-height: 2.3rem;
+        max-width: 12rem;
+      }
+    }
+  
+    .icon--cigna svg {
+      max-height: 2.7rem;
+      max-width: 7.5rem;
+  
+      @include media-query('small') {
+        max-height: 2.9rem;
+        max-width: 8rem;
+      }
+  
+      @include media-query('large') {
+        max-height: 3.5rem;
+        max-width: 12rem;
+      }
+    }
+
+    .icon--humana svg {
+      max-height: 1.4rem;
+      max-width: 7rem;
+  
+      @include media-query('small') {
+        max-height: 1.7rem;
+        max-width: 9rem;
+      }
+  
+      @include media-query('large') {
+        max-height: 2rem;
+        max-width: 11rem;
+      }
+    }
+
+    .icon--moo svg {
+      max-height: 2.3rem;
+  
+      @include media-query('small') {
+        max-height: 2.7rem;
+      }
+  
+      @include media-query('large') {
+        max-height: 3.4rem;
+      }
+    }
+  
+    .icon--mm svg {
+      max-height: 1.3rem;
+  
+      @include media-query('small') {
+        max-height: 1.6rem;
+      }
+  
+      @include media-query('large') {
+        max-height: 1.9rem;
+      }
+    }
+
+    @include media-query('medium') {
+      padding: 8rem 0;
+    }
+  }
+}

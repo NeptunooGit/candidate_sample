@@ -1,0 +1,160 @@
+@import 'styles/config/config';
+
+.value-section {
+  background-color: $primary-color;
+  text-align: center;
+
+  &__inner {
+    margin: 0 auto;
+    max-width: 105rem;
+    padding: 5rem 2.5rem;
+    padding-top: 8rem;
+
+    @include media-query('x-small') {
+      padding: 7rem 3.5rem;
+      padding-top: 10rem;
+    }
+
+    @include media-query('medium') {
+      padding: 7rem 5rem;
+      padding-top: 10rem;
+    }
+
+    @include media-query('large') {
+      padding-top: 11rem;
+    }
+  }
+
+  h3 {
+    color: #fff;
+    font-family: $body-font;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+
+    @include media-query('x-small') {
+      font-size: 2.2rem;
+    }
+
+    @include media-query('small') {
+      font-size: 2.5rem;
+    }
+
+    @include media-query('medium') {
+      font-size: 3rem;
+    }
+
+    @include media-query('large') {
+      font-size: 3.5rem;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 1rem;
+    max-width: 40rem;
+
+    &--hidden {
+      display: none;
+    }
+
+    @include media-query('medium') {
+      max-width: 90rem;
+      margin-top: 3.5rem;
+    }
+
+    @include media-query('large') {
+      margin-top: 5rem;
+    }
+  }
+
+  &__icon-row {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+
+    @include media-query('small') {
+      margin-top: 2rem;
+    }
+
+    @include media-query('medium') {
+      margin-top: 0;
+      width: auto;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    margin: 0 1rem;
+
+    svg {
+      fill: #fff;
+      max-width: 12rem;
+    }
+
+    @include media-query('x-small') {
+      margin: 0 2rem;
+
+      svg {
+        max-width: 14rem;
+      }
+    }
+
+    @include media-query('large') {
+      margin: 0 3rem;
+
+      svg {
+        max-width: 17rem;
+      }
+    }
+  }
+
+  &__icon--aetna svg {
+    max-height: 1.5rem;
+    max-width: 7rem;
+
+    @include media-query('x-small') {
+      max-height: 1.7rem;
+      max-width: 8rem;
+    }
+
+    @include media-query('large') {
+      max-height: 2.3rem;
+      max-width: 12rem;
+    }
+  }
+
+  &__icon--cigna svg {
+    max-height: 2.7rem;
+    max-width: 7.5rem;
+
+    @include media-query('x-small') {
+      max-height: 2.9rem;
+      max-width: 8rem;
+    }
+
+    @include media-query('large') {
+      max-height: 3.5rem;
+      max-width: 12rem;
+    }
+  }
+
+  &__icon--mm svg {
+    max-height: 1.3rem;
+
+    @include media-query('x-small') {
+      max-height: 1.6rem;
+    }
+
+    @include media-query('large') {
+      max-height: 1.9rem;
+    }
+  }
+}

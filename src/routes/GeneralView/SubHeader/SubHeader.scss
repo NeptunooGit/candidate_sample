@@ -1,0 +1,48 @@
+@import 'styles/config/config';
+
+.subheader {
+  padding: 0 2.5rem;
+
+  &__inner {
+    border-bottom: 0.2rem solid $grey-light-color;
+    text-align: center;
+  }
+
+  &__link {
+    display: inline-block;
+    margin: 0 1.2rem;
+
+    @include media-query('x-small') {
+      margin: 0 2rem;
+    }
+  }
+
+  &__link a {
+    color: $grey-dark-color;
+    display: inline-block;
+    font-family: $headline-font;
+    font-size: 1.1rem;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    padding: 1.3rem 0;
+    text-transform: uppercase;
+    transition: color $transition-speed;
+
+    @include media-query('medium') {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__link--active a,
+  &__link a:hover {
+    color: $secondary-color;
+  }
+
+  @include media-query('x-small') {
+    padding: 0 3.5rem;
+  }
+
+  @include media-query('large') {
+    padding: 0 5rem;
+  }
+}

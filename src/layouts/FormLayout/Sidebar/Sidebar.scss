@@ -1,0 +1,54 @@
+@import 'styles/config/config';
+
+.form-sidebar {
+  background-color: $grey-light-color;
+  height: 100%;
+  padding-top: 8rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 35rem;
+
+  &__inner {
+    padding: 5rem;
+  }
+
+  &__start-message {
+    color: $grey-color;
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+
+  &__field {
+    margin-bottom: 3rem;
+    overflow: hidden;
+
+    span {
+      color: $primary-color;
+      display: block;
+      font-family: $headline-font;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.05rem;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1.8rem;
+      letter-spacing: 0.05rem;
+      position: relative;
+      white-space: nowrap;
+    }
+
+    p:after {
+      background: linear-gradient(to left, $grey-light-color, rgba($grey-light-color, 0%));
+      content: '';
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 3rem;
+    }
+  }
+}

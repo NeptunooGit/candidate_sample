@@ -1,0 +1,176 @@
+@import 'styles/config/config';
+
+.tooltip {
+  align-items: center;
+  background-color: $grey-dark-color;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  display: flex;
+  min-height: 5rem;
+  padding: 1.2rem;
+  position: absolute;
+  z-index: 999;
+
+  &--top {
+    bottom: 100%;
+    left: 50%;
+    transform: translate3d(-50%, -2rem, 0);
+
+    &:before {
+      border-color: $grey-dark-color transparent transparent transparent;
+      border-style: solid;
+      border-width: 1rem 1.2rem 0 1.2rem;
+      bottom: -0.8rem;
+      content: '';
+      height: 0;
+      @extend %horizontal-align-self;
+      position: absolute;
+      width: 0;
+    }
+  }
+
+  &--bottom {
+    left: 50%;
+    top: 100%;
+    transform: translate3d(-50%, 2rem, 0);
+
+    &:before {
+      border-color: transparent transparent $grey-dark-color transparent;
+      border-style: solid;
+      border-width: 0 1.2rem 1rem 1.2rem;
+      content: '';
+      height: 0;
+      @extend %horizontal-align-self;
+      position: absolute;
+      top: -0.8rem;
+      width: 0;
+    }
+  }
+
+  &--left {
+    top: 50%;
+    right: 100%;
+    transform: translate3d(-2rem, -50%, 0);
+
+    &:before {
+      border-color: transparent transparent transparent $grey-dark-color;
+      border-style: solid;
+      border-width: 1.2rem 0 1.2rem 1rem;
+      content: '';
+      height: 0;
+      position: absolute;
+      right: -0.8rem;
+      @extend %vertical-align-self;
+      width: 0;
+    }
+  }
+
+  &--right {
+    left: 100%;
+    top: 50%;
+    transform: translate3d(2rem, -50%, 0);
+
+    &:before {
+      border-color: transparent $grey-dark-color transparent transparent;
+      border-style: solid;
+      border-width: 1.2rem 1rem 1.2rem 0;
+      content: '';
+      height: 0;
+      left: -0.8rem;
+      position: absolute;
+      @extend %vertical-align-self;
+      width: 0;
+    }
+  }
+
+  &--top,
+  &--bottom {
+    text-align: center;
+  }
+
+  &--left,
+  &--right {
+    text-align: left;
+  }
+
+  &--enter {
+    opacity: 0;
+  }
+
+  &--enter-active {
+    opacity: 1;
+    transition-duration: $transition-speed;
+    transition-property: opacity, transform;
+  }
+
+  &--exit {
+    opacity: 1;
+  }
+
+  &--exit-active {
+    opacity: 0;
+    transition-duration: $transition-speed;
+    transition-property: opacity, transform;
+  }
+
+  &--top#{&}--enter {
+    transform: translate3d(-50%, -4rem, 0);
+  }
+
+  &--bottom#{&}--enter {
+    transform: translate3d(-50%, 4rem, 0);
+  }
+
+  &--left#{&}--enter {
+    transform: translate3d(-4rem, -50%, 0);
+  }
+
+  &--right#{&}--enter {
+    transform: translate3d(4rem, -50%, 0);
+  }
+
+  &--top#{&}--exit,
+  &--top#{&}--enter-active {
+    transform: translate3d(-50%, -2rem, 0);
+  }
+
+  &--bottom#{&}--exit,
+  &--bottom#{&}--enter-active {
+    transform: translate3d(-50%, 2rem, 0);
+  }
+
+  &--left#{&}--exit,
+  &--left#{&}--enter-active {
+    transform: translate3d(-2rem, -50%, 0);
+  }
+
+  &--right#{&}--exit,
+  &--right#{&}--enter-active {
+    transform: translate3d(2rem, -50%, 0);
+  }
+
+  &--top#{&}--exit-active {
+    transform: translate3d(-50%, -4rem, 0);
+  }
+
+  &--bottom#{&}--exit-active {
+    transform: translate3d(-50%, 4rem, 0);
+  }
+
+  &--left#{&}--exit-active {
+    transform: translate3d(-4rem, -50%, 0);
+  }
+
+  &--right#{&}--exit-active {
+    transform: translate3d(4rem, -50%, 0);
+  }
+
+  &__text {
+    color: #fff;
+    font-family: $headline-font;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.02rem;
+    text-transform: uppercase;
+  }
+}

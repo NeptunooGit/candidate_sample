@@ -1,0 +1,308 @@
+@import 'styles/config/config';
+
+.faq-section {
+  background-color: #fff;
+
+  &__inner {
+    margin: 0 auto;
+    max-width: 85rem;
+    padding: 6rem 2.5rem;
+    text-align: center;
+
+    @include media-query('x-small') {
+      padding: 6rem 3.5rem;
+    }
+
+    @include media-query('small') {
+      padding: 6rem;
+    }
+
+    @include media-query('medium') {
+      padding: 8rem;
+    }
+
+    @include media-query('large') {
+      max-width: 100rem;
+    }
+
+    @include media-query('x-large') {
+      max-width: 140rem;
+      text-align: left;
+    }
+  }
+
+  &__text {
+    margin-bottom: 2.5rem;
+
+    h2,
+    h2 span {
+      font-family: $headline-font;
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+  
+      @include media-query('small') {
+        font-size: 2.5rem;
+      }
+  
+      @include media-query('medium') {
+        font-size: 3rem;
+      }
+  
+      @include media-query('large') {
+        font-size: 3.5rem;
+      }
+
+      @include media-query('x-large') {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    h2 span {
+      color: $primary-color;
+      display: block;
+      margin: 0;
+
+      @include media-query('large') {
+        display: inline;
+      }
+
+      @include media-query('x-large') {
+        display: block;
+      }
+    }
+
+    p {
+      font-size: 1.4rem;
+      letter-spacing: 0.05rem;
+      line-height: 1.65;
+      margin-bottom: 2rem;
+
+      @include media-query('x-small') {
+        font-size: 1.5rem;
+      }
+  
+      @include media-query('small') {
+        font-size: 1.7rem;
+      }
+  
+      @include media-query('medium') {
+        font-size: 2rem;
+      }
+  
+      @include media-query('large') {
+        font-size: 2.3rem;
+      }
+    }
+
+    @include media-query('small') {
+      margin-bottom: 4.5rem;
+    }
+
+    @include media-query('x-large') {
+      float: right;
+      margin: 0;
+      margin-left: 8rem;
+      width: 39rem;
+    }
+  }
+
+  &__button {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+    color: #fff;
+    margin-top: 3rem;
+
+    &:hover,
+    &:focus {
+      background-color: darken($secondary-color, 5%);
+    }
+
+    &:hover svg,
+    &:focus svg {
+      transform: translate3d(0.2rem, 0, 0);
+    }
+
+    svg {
+      display: inline-block;
+      fill: #fff;
+      height: 0.8rem;
+      margin-left: 0.7rem;
+      transform: translate3d(-0.1rem, 0, 0);
+      transition: transform $transition-speed;
+      width: 2rem;
+
+      @include media-query('medium') {
+        height: 1rem;
+        width: 2.6rem;
+      }
+    }
+
+    @include media-query('small') {
+      margin-top: 5rem;
+    }
+
+    @include media-query('x-large') {
+      margin: 0;
+    }
+  }
+  
+  &__faqs {
+    margin: 0 auto;
+    max-width: 70rem;
+    overflow: hidden;
+    text-align: left;
+    width: auto;
+
+    @include media-query('x-large') {
+      max-width: none;
+    }
+  }
+
+  &__faq {
+    border: 0.2rem solid $grey-color;
+    border-bottom: none;
+    overflow: hidden;
+    position: relative;
+    transition: max-height $transition-speed;
+
+    &:first-child {
+      border-top-left-radius: 0.8rem;
+      border-top-right-radius: 0.8rem;
+    }
+
+    &:last-child {
+      border-bottom: 0.2rem solid $grey-color;
+      border-bottom-left-radius: 0.8rem;
+      border-bottom-right-radius: 0.8rem;
+    }
+
+    &:before {
+      background-color: $grey-color;
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      transition: background-color $transition-speed, opacity $transition-speed;
+      width: 0.4rem;
+      z-index: 2;
+    }
+
+    &:hover:before {
+      background: $grey-color;
+      opacity: 1;
+    }
+
+    &--active:before,
+    &--active:hover:before {
+      background-color: $secondary-color;
+      opacity: 1;
+    }
+
+    &__question {
+      cursor: pointer;
+      outline: none;
+      padding: 2.5rem;
+      padding-right: 6.4rem;
+      position: relative;
+      transition: background-color $transition-speed;
+
+      @include media-query('small') {
+        padding: 3.5rem 3rem;
+        padding-right: 8rem;
+      }
+    }
+
+    &__question:hover,
+    &__question:focus {
+      background-color: $grey-light-color;
+    }
+
+    &--active &__question {
+      background-color: transparent;
+      cursor: initial;
+      transition: none;
+    }
+
+    &__question h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.08rem;
+      line-height: 1.5;
+      text-transform: uppercase;
+
+      @include media-query('x-small') {
+        font-size: 1.3rem;
+      }
+  
+      @include media-query('small') {
+        font-size: 1.4rem;
+      }
+    }
+
+    &__question svg {
+      fill: $grey-dark-color;
+      max-height: 1.4rem;
+      max-width: 1.4rem;
+      position: absolute;
+      right: 2.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @include media-query('small') {
+        max-height: 2rem;
+        max-width: 2rem;
+        right: 3rem;
+      }
+    }
+
+    &__answer {
+      opacity: 0;
+      padding: 2.5rem;
+      padding-top: 0;
+      transition: opacity $transition-speed linear 0.1s;
+
+      @include media-query('small') {
+        padding: 3.5rem 3rem;
+        padding-top: 0;
+      }
+    }
+
+    &--active &__answer {
+      opacity: 1;
+    }
+
+    &__answer p {
+      font-size: 1.3rem;
+      letter-spacing: 0.02rem;
+      line-height: 1.7;
+
+      @include media-query('x-small') {
+        font-size: 1.5rem;
+      }
+  
+      @include media-query('medium') {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__answer a {
+      border-bottom: 0.2rem solid transparent;
+      color: $secondary-color;
+      display: inline-block;
+      transition: border-color $transition-speed;
+      visibility: hidden;
+    }
+
+    &__answer a:hover {
+      border-color: $secondary-color;
+    }
+
+    &--active &__answer a {
+      visibility: visible;
+    }
+  }
+}

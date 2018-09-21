@@ -1,0 +1,284 @@
+@import 'styles/config/config';
+
+.thank-you-view {
+  &__hero {
+    position: relative;
+
+    &__bg {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      @extend %standard-background;
+      top: 0;
+      width: 100%;
+
+      &:before {
+        background-color: rgba($grey-dark-color, 0.8);
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+
+        @include media-query('x-large') {
+          background-color: rgba($grey-dark-color, 0.5);
+        }
+      }
+
+      &__image {
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        @extend %standard-background;
+        top: 0;
+        transition: opacity 0.5s;
+        width: 100%;
+        z-index: 1;
+    
+        &--loaded {
+          opacity: 1;
+        }
+      }
+
+      @include media-query('x-large') {
+        width: 50%;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      position: absolute;
+      visibility: hidden;
+    }
+
+    &__text {
+      align-items: center;
+      display: flex;
+      max-height: 60rem;
+      min-height: 45rem;
+      position: relative;
+      text-align: center;
+      z-index: 2;
+
+      &__inner {
+        margin: 0 auto;
+        max-width: 87rem;
+        padding: 10% 2.5rem;
+        padding-top: 16%;
+
+        @include media-query('x-small') {
+          padding: 12% 3.5rem;
+          padding-top: 16%;
+        }
+  
+        @include media-query('large') {
+          padding: 12% 5rem;
+          padding-top: 14%;
+        }
+
+        @include media-query('x-large') {
+          max-width: none;
+          padding: 12% 8rem;
+        }
+      }
+
+      h1 {
+        color: #fff;
+        font-family: $headline-font;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+  
+        @include media-query('x-small') {
+          font-size: 2.25rem;
+        }
+  
+        @include media-query('small') {
+          font-size: 2.5rem;
+        }
+  
+        @include media-query('large') {
+          font-size: 3rem;
+        }
+
+        @include media-query('x-large') {
+          color: $primary-color;
+        }
+      }
+  
+      p {
+        color: #fff;
+        font-size: 1.5rem;
+        letter-spacing: 0.1rem;
+        line-height: 1.6;
+  
+        @include media-query('x-small') {
+          font-size: 1.8rem;
+        }
+  
+        @include media-query('small') {
+          font-size: 2rem;
+        }
+  
+        @include media-query('large') {
+          font-size: 2.25rem;
+        }
+
+        @include media-query('x-large') {
+          color: $grey-dark-color;
+        }
+      }
+
+      a {
+        border-bottom: 0.2rem solid transparent;
+        color: #fff;
+        display: inline-block;
+        transition: border-color $transition-speed;
+
+        @include media-query('x-large') {
+          color: $primary-color;
+        }
+      }
+  
+      a:hover {
+        border-color: #fff;
+
+        @include media-query('x-large') {
+          border-color: $primary-color;
+        }
+      }
+
+      @include media-query('x-large') {
+        padding-left: 50%;
+        text-align: left;
+      }
+    }
+  }
+
+  &__icons-wrapper {
+    background-color: $grey-light-color;
+    padding: 3rem 2.5rem;
+
+    @include media-query('x-small') {
+      padding: 4rem 3.5rem;
+    }
+
+    @include media-query('medium') {
+      padding: 5rem;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 40rem;
+
+    @include media-query('medium') {
+      max-width: 90rem;
+    }
+
+    @include media-query('x-large') {
+      max-width: 140rem;;
+    }
+  }
+
+  &__icon-row {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+
+    &:first-child {
+      margin-bottom: 2rem;
+
+      @include media-query('medium') {
+        margin: 0;
+      }
+    }
+
+    @include media-query('medium') {
+      width: auto;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    margin: 0 1rem;
+
+    svg {
+      fill: $grey-medium-color;
+      max-width: 12rem;
+    }
+
+    @include media-query('x-small') {
+      margin: 0 2rem;
+
+      svg {
+        max-width: 14rem;
+      }
+    }
+
+    @include media-query('large') {
+      margin: 0 3rem;
+
+      svg {
+        max-width: 17rem;
+      }
+    }
+
+    @include media-query('x-large') {
+      margin: 0 5rem;
+    }
+  }
+
+  &__icon--aetna svg {
+    max-height: 1.5rem;
+    max-width: 7rem;
+
+    @include media-query('x-small') {
+      max-height: 1.7rem;
+      max-width: 8rem;
+    }
+
+    @include media-query('large') {
+      max-height: 2.3rem;
+      max-width: 12rem;
+    }
+  }
+
+  &__icon--cigna svg {
+    max-height: 2.7rem;
+    max-width: 7.5rem;
+
+    @include media-query('x-small') {
+      max-height: 2.9rem;
+      max-width: 8rem;
+    }
+
+    @include media-query('large') {
+      max-height: 3.5rem;
+      max-width: 12rem;
+    }
+  }
+
+  &__icon--mm svg {
+    max-height: 1.3rem;
+
+    @include media-query('x-small') {
+      max-height: 1.6rem;
+    }
+
+    @include media-query('large') {
+      max-height: 1.9rem;
+    }
+  }
+}

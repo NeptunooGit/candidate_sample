@@ -1,0 +1,393 @@
+@import 'styles/config/config';
+
+.form-view {
+  padding-bottom: 30rem;
+  padding-top: 6rem;
+
+  &__inner {
+    margin: 0 auto;
+    max-width: 80rem;
+    padding: 6rem 3.5rem;
+
+    @include media-query('x-small') {
+      padding: 6rem 4rem;
+    }
+
+    @include media-query('medium') {
+      padding: 8rem 5rem;
+    }
+
+    @include media-query('large') {
+      padding: 8rem 6rem;
+    }
+  }
+
+  h2,
+  h3 {
+    font-family: $body-font;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    line-height: 1.4;
+  }
+
+  h2 {
+    font-size: 2rem;
+
+    @include media-query('x-small') {
+      font-size: 2.5rem;
+    }
+
+    @include media-query('medium') {
+      font-size: 3rem;
+    }
+  }
+
+  h4 {
+    color: $primary-color;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+
+    @include media-query('x-small') {
+      font-size: 1.4rem;
+    }
+
+    @include media-query('medium') {
+      font-size: 1.5rem;
+    }
+  }
+
+  input {
+    border: none;
+    border-bottom: 0.2rem solid $grey-color;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: $grey-dark-color;
+    font-family: $body-font;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+    padding: 0;
+    padding-bottom: 1.2rem;
+    transition-duration: $transition-speed;
+    transition-property: border-color;
+    width: 100%;
+
+    &:focus,
+    &:active {
+      border-color: $primary-color;
+      outline: none;
+    }
+
+    @include placeholder {
+      color: $grey-medium-color;
+    }
+
+    @include media-query('x-small') {
+      font-size: 1.7rem;
+      padding-bottom: 1.4rem;
+    }
+
+    @include media-query('medium') {
+      font-size: 2rem;
+      padding-bottom: 1.7rem;
+    }
+  }
+
+  &__headline,
+  &__field {
+    margin-bottom: 5rem;
+
+    @include media-query('x-small') {
+      margin-bottom: 6rem;
+    }
+
+    @include media-query('medium') {
+      margin-bottom: 8rem;
+    }
+  }
+
+  &__field__zip {
+    input {
+      width: 5rem;
+
+      @include media-query('x-small') {
+        width: 5.8rem;
+      }
+
+      @include media-query('medium') {
+        width: 6.8rem;
+      }
+    }
+  }
+
+  &__field__name {
+    &__inner {
+      @extend %clearfix;
+      margin: 0 -1.5rem;
+    }
+
+    &__input {
+      float: left;
+      padding: 0 1.5rem;
+      width: 100%;
+
+      @include media-query('xx-small') {
+        width: 50%;
+      }
+    }
+
+    &__input:first-child {
+      margin-bottom: 3rem;
+
+      @include media-query('xx-small') {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__field__gender {
+    &__inner {
+      @extend %clearfix;
+      margin: 0 -1.5rem;
+    }
+
+    &__button-wrapper {
+      float: left;
+      padding: 0 1rem;
+      width: 50%;
+
+      &:first-child .form-view__field__gender__button--female,
+      &:last-child .form-view__field__gender__button--male {
+        background: $primary-color;
+        color: #fff;
+      }
+
+      @include media-query('x-small') {
+        padding: 0 1.5rem;
+      }
+    }
+
+    &__button {
+      border-color: $primary-color;
+      color: $primary-color;
+      width: 100%;
+
+      &:hover,
+      &:focus {
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+
+  &__field__birth-month {
+    &--january .form-block__field &--january,
+    &--february .form-block__field &--february,
+    &--march .form-block__field &--march,
+    &--april .form-block__field &--april,
+    &--may .form-block__field &--may,
+    &--june .form-block__field &--june,
+    &--july .form-block__field &--july,
+    &--august .form-block__field &--august,
+    &--september .form-block__field &--september,
+    &--october .form-block__field &--october,
+    &--november .form-block__field &--november,
+    &--december .form-block__field &--december {
+      background-color: $primary-color;
+      border-color: $primary-color;
+      color: #fff;
+    }
+
+    .form-block__field {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .form-block__field > div {
+      align-items: center;
+      border: 0.2rem solid transparent;
+      border-radius: 0.8rem;
+      color: $primary-color;
+      cursor: pointer;
+      display: flex;
+      font-family: $headline-font;
+      font-size: 1.3rem;
+      font-weight: 700;
+      height: 4rem;
+      justify-content: center;
+      letter-spacing: 0.05rem;
+      outline: none;
+      text-transform: uppercase;
+      transition-duration: $transition-speed;
+      transition-property: background-color, border, color;
+      width: 50%;
+
+      &:hover,
+      &:focus {
+        border-color: $primary-color;
+      }
+
+      @media (min-width: 400px) {
+        font-size: 1.2rem;
+        width: 33.3333333%;
+      }
+
+      @include media-query('x-small') {
+        font-size: 1.4rem;
+        height: 4.5rem;
+      }
+
+      @include media-query('small') {
+        width: 25%;
+      }
+    }
+  }
+
+  &__field__birth-day {
+    .form-block__field {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 40rem;
+    }
+
+    &__day {
+      align-items: center;
+      border: 0.2rem solid transparent;
+      border-radius: 0.8rem;
+      color: $primary-color;
+      cursor: pointer;
+      display: flex;
+      font-family: $headline-font;
+      font-size: 1.4rem;
+      font-weight: 700;
+      height: 4rem;
+      justify-content: center;
+      letter-spacing: 0.05rem;
+      outline: none;
+      text-transform: uppercase;
+      transition-duration: $transition-speed;
+      transition-property: background-color, border, color;
+      width: 14.28%;
+
+      &--active {
+        background-color: $primary-color;
+        border-color: $primary-color;
+        color: #fff;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: $primary-color;
+      }
+
+      @include media-query('x-small') {
+        font-size: 1.7rem;
+      }
+    }
+  }
+
+  &__field__birth-year {
+    input {
+      width: 4.2rem;
+
+      @include media-query('x-small') {
+        width: 4.8rem;
+      }
+
+      @include media-query('medium') {
+        width: 5.6rem;
+      }
+    }
+  }
+
+  &__field__phone {
+    input {
+      width: 12rem;
+
+      @include media-query('x-small') {
+        width: 13.5rem;
+      }
+
+      @include media-query('medium') {
+        width: 15.5rem;
+      }
+    }
+  }
+
+  &__dialog {
+    h4 {
+      color: $primary-color;
+    }
+
+    p {
+      margin: 0 auto;
+      max-width: 35rem;
+      width: 95%;
+    }
+
+    a:not(.button) {
+      border-bottom: 0.2rem solid transparent;
+      color: $primary-color;
+      display: inline-block;
+      transition: border-color $transition-speed;
+    }
+
+    a:hover {
+      border-color: $primary-color;
+    }
+
+    .dialog__close svg {
+      fill: $primary-color;
+    }
+
+    &__button-wrapper {
+      margin-top: 2rem;
+
+      @include media-query('xx-small') {
+        margin-top: 2.5rem;
+      }
+    }
+
+    &__button--ghost,
+    &__button--normal {
+      box-sizing: border-box;
+      border-color: $primary-color;
+      line-height: 1.5;
+      margin: 0.5rem 0;
+      width: 18rem;
+
+      @include media-query('xx-small') {
+        margin: 0 0.5rem;
+        width: 11rem;
+      }
+
+      @include media-query('medium') {
+        margin: 0 1rem;
+        width: 15rem;
+      }
+    }
+
+    &__button--ghost {
+      color: $primary-color;
+    }
+
+    &__button--normal {
+      background-color: $primary-color;
+      color: #fff;
+
+      &:hover {
+        background-color: darken($primary-color, 5%);
+      }
+    }
+  }
+
+  @include media-query('x-small') {
+    padding-top: 8rem;
+  }
+
+  @include media-query('large') {
+    padding-right: 35rem;
+  }
+}

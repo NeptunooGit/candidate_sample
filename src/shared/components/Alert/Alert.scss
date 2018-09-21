@@ -1,0 +1,70 @@
+@import 'styles/config/config';
+
+.alert {
+  background-color: $grey-dark-color;
+  border-radius: 0.5rem;
+  bottom: 1.5rem;
+  box-sizing: border-box;
+  left: 1.5rem;
+  padding: 2rem;
+  padding-right: 5.5rem;
+  position: fixed;
+  right: 1.5rem;
+  text-align: left;
+  transition: background-color $transition-speed;
+  z-index: 99999;
+
+  &--success {
+    background-color: $secondary-color;
+  }
+
+  &--enter {
+    opacity: 0;
+    transform: translate3d(0, 150%, 0);
+  }
+
+  &--enter-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-duration: $transition-speed;
+    transition-property: background-color, opacity, transform;
+  }
+
+  &--exit {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  &--exit-active {
+    opacity: 0;
+    transform: translate3d(0, 150%, 0);
+    transition-duration: $transition-speed;
+    transition-property: background-color, opacity, transform;
+  }
+
+  &__text {
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    @extend %vertical-align-self;
+
+    svg {
+      fill: #fff;
+      height: 1.7rem;
+      transform: rotate(45deg);
+      width: 1.7rem;
+    }
+  }
+
+  @include media-query('x-small') {
+    bottom: 3rem;
+    left: 3rem;
+    right: auto;
+  }
+}

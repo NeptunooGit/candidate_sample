@@ -1,0 +1,75 @@
+@import 'styles/config/config';
+
+.button {
+  cursor: pointer;
+  display: inline-block;
+  font-family: $headline-font;
+  font-weight: 900;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition-duration: $transition-speed;
+  transition-property: background-color, border-color, color;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &--small {
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    padding: 0.8rem 1.2rem;
+    padding-bottom: 0.7rem;
+
+    @include media-query('medium') {
+      font-size: 1.3rem;
+      padding: 1rem 1.5rem;
+      padding-bottom: 0.9rem;
+    }
+  }
+  
+  &--medium {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    padding: 1.2rem 2.5rem;
+    padding-bottom: 1.1rem;
+
+    @include media-query('medium') {
+      font-size: 1.5rem;
+      padding: 1.5rem 3rem;
+      padding-bottom: 1.4rem;
+    }
+  }
+
+  &--large {
+    font-size: 1.7rem;
+    letter-spacing: 0.1rem;
+    padding: 1.5rem 3rem;
+    padding-bottom: 1.4rem;
+
+    @include media-query('medium') {
+      font-size: 1.8rem;
+      padding: 2rem 3.5rem;
+      padding-bottom: 1.9rem;
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    border-radius: 0.8rem;
+    border-style: solid;
+    border-width: 0.2rem;
+  }
+
+  &--normal {
+    border-radius: 0.8rem;
+    border-style: solid;
+    border-width: 0.2rem;
+  }
+
+  span {
+    font-family: $headline-font;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+}

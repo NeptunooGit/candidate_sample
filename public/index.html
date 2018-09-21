@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="theme-color" content="#315576">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png">
+    <link rel="stylesheet" href="https://use.typekit.net/bob1haq.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MW996WM');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Snowplow starts plowing -->
+    <script type="text/javascript">;
+      (function(p, l, o, w, i, n, g) {
+        if (!p[i]) {
+          p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || [];
+          p.GlobalSnowplowNamespace.push(i);
+
+          p[i] = function() {
+            (p[i].q = p[i].q || []).push(arguments);
+          };
+          
+          p[i].q = p[i].q || [];
+          n = l.createElement(o);
+          g = l.getElementsByTagName(o)[0];
+          n.async = 1;
+          n.src = w;
+          g.parentNode.insertBefore(n, g);
+        }
+      }(window, document, 'script', '//d1fc8wv8zag5ca.cloudfront.net/2.6.2/sp.js', 'snowplow'));
+
+      window.snowplow('newTracker', 'cf', 'www.snoplx.com', {
+        appId: 'snowplow',
+        cookieDomain: null,
+        discoverRootDomain: true,
+        userFingerprint: true,
+        forceSecureTracker: true,
+        forceUnsecureTracker: false
+      });
+
+      window.snowplow(
+        'trackStructEvent',
+        'session',
+        'pageView',
+        'window',
+        JSON.stringify({ querystring: window.location.search.replace('?', '') }),
+        '1.0'
+      );
+
+      snowplow(function() {
+        localStorage.setItem('domainSessionId', this.cf.getDomainUserInfo()[6]);
+      });
+    </script>
+    <!-- Snowplow stops plowing -->
+
+    <title>Online Medicare Plans</title>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MW996WM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div id="root"></div>
+
+    <script type="text/javascript">
+      function trustedFormCertUrlCallback(certificateUrl) {
+        localStorage.setItem('trustedFormCertificateUrl', certificateUrl);
+      }
+    </script>
+
+    <script type="text/javascript">
+      (function() {
+        var field = 'xxTrustedFormCertUrl';
+        var provideReferrer = false;
+        var invertFieldSensitivity = false;
+        var tf = document.createElement('script');
+
+        tf.type = 'text/javascript'; tf.async = true;
+        tf.src = 'http' + ('https:' == document.location.protocol ? 's' : '') + '://api.trustedform.com/trustedform.js?provide_referrer=' + escape(provideReferrer) + '&field=' + escape(field) + '&l='+new Date().getTime()+Math.random() + '&invert_field_sensitivity=' + invertFieldSensitivity;
+
+        var s = document.getElementsByTagName('script')[0];
+        
+        s.parentNode.insertBefore(tf, s); }
+      )();
+    </script>
+
+    <noscript><img src="http://api.trustedform.com/ns.gif" /></noscript>
+  </body>
+</html>

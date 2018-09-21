@@ -1,0 +1,391 @@
+@import 'styles/config/config';
+
+.fixed-header {
+  background-color: transparent;
+  box-shadow: 0 0.8rem 3.2rem 0.2rem transparent;
+  left: 0;
+  padding: 1rem 0;
+  position: absolute;
+  transform: translate3d(0, -50%, 0);
+  transition-duration: $transition-speed;
+  transition-property: background-color, box-shadow, opacity;
+  width: 100%;
+  z-index: 9999;
+
+  &--fixed {
+    background-color: #fff;
+    box-shadow: 0 0.8rem 3.2rem 0.2rem rgba(0, 0, 0, 0.15);
+    position: fixed;
+    top: 0 !important;
+    transform: translate3d(0, 0, 0);
+  }
+
+  &__logo {
+    display: none;
+    left: 3.5rem;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(3rem, -50%, 0);
+    transition: opacity $transition-speed, transform $transition-speed, visibility 0s linear $transition-speed;
+    visibility: hidden;
+
+    svg {
+      fill: $grey-dark-color;
+      height: 1.1rem;
+      width: 6.9rem;
+
+      @include media-query('medium') {
+        height: 1.2rem;
+        width: 7.5rem;
+      }
+
+      @include media-query('x-large') {
+        height: 1.4rem;
+        width: 8.7rem;
+      }
+    }
+
+    @include media-query('small') {
+      display: block;
+    }
+
+    @include media-query('large') {
+      left: 5rem;
+    }
+  }
+
+  &--fixed &__logo {
+    opacity: 1;
+    transform: translate3d(0, -50%, 0);
+    transition: opacity $transition-speed linear 0.1s, transform $transition-speed linear 0.1s, visibility 0s;
+    visibility: visible;
+  }
+
+  &__form {
+    height: 6rem;
+    margin: 0 auto;
+    max-width: 33rem;
+    transition-duration: $transition-speed;
+    transition-property: height, max-width;
+    width: 80%;
+
+    @include media-query('xx-small') {
+      height: 6.5rem;
+    }
+
+    @include media-query('x-small') {
+      height: 8rem;
+      max-width: 45rem;
+    }
+
+    @include media-query('small') {
+      height: 9rem;
+      max-width: 55rem;
+      width: 100%;
+    }
+
+    @include media-query('large') {
+      height: 10rem;
+      max-width: 65rem;
+    }
+  }
+
+  &--fixed &__form {
+    height: 5rem;
+    max-width: 30rem;
+    width: 80%;
+
+    @include media-query('x-small') {
+      height: 5.5rem;
+      max-width: 33rem;
+    }
+
+    @include media-query('medium') {
+      height: 6rem;
+      max-width: 40rem;
+    }
+
+    @include media-query('large') {
+      height: 7rem;
+      max-width: 50rem;
+    }
+  }
+
+  &__form-input {
+    float: left;
+    height: 100%;
+    width: 50%;
+  }
+
+  &__form-submit {
+    float: left;
+    height: 100%;
+    position: relative;
+    width: 50%;
+  }
+
+  &__form-input input {
+    border: none;
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0;
+    box-sizing: border-box;
+    color: $grey-dark-color;
+    font-family: $body-font;
+    font-size: 1.2rem;
+    height: 100%;
+    letter-spacing: 0.05rem;
+    outline: none;
+    padding: 1.7rem;
+    transition-duration: $transition-speed;
+    transition-property: background-color, font-size, padding;
+    width: 100%;
+
+    &:focus,
+    &:active {
+      border: none;
+      outline: none;
+    }
+
+    @include placeholder {
+      color: $grey-medium-color;
+    }
+
+    @include media-query('xx-small') {
+      letter-spacing: 0.12rem;
+      padding: 2rem;
+    }
+
+    @include media-query('x-small') {
+      font-size: 1.3rem;
+      padding: 2.5rem;
+    }
+
+    @include media-query('small') {
+      font-size: 1.8rem;
+      padding: 4rem;
+    }
+  }
+
+  &--fixed &__form-input input {
+    background-color: $grey-faded-color;
+
+    @include media-query('small') {
+      font-size: 1.3rem;
+      padding: 2.5rem;
+    }
+  }
+
+  &__form-submit button {
+    background-color: $secondary-color;
+    border: 0.2rem solid $secondary-color;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0.8rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0.8rem;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 1.2rem;
+    height: 100%;
+    padding: 0.7rem 1.5rem;
+    padding-bottom: 0.6rem;
+    transition-duration: $transition-speed;
+    transition-property: background-color, border-color, color, font-size, padding;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      background-color: darken($secondary-color, 5%);
+
+      svg {
+        transform: translate3d(0.3rem, 0, 0);
+      }
+    }
+
+    svg {
+      display: none;
+      fill: #fff;
+      height: 0.9rem;
+      margin-left: 0.7rem;
+      transform: translate3d(-0.1rem, 0, 0);
+      transition-duration: $transition-speed;
+      transition-property: fill, height, transform, width;
+      width: 2.3rem;
+
+      @include media-query('x-small') {
+        display: inline-block;
+      }
+
+      @include media-query('small') {
+        height: 1.4rem;
+        margin-left: 1.7rem;
+        width: 3.6rem;
+      }
+    }
+
+    @include media-query('xx-small') {
+      font-size: 1.3rem;
+      padding: 1rem 2rem;
+      padding-bottom: 0.9rem;
+    }
+
+    @include media-query('x-small') {
+      font-size: 1.4rem;
+      padding: 1.5rem 2.5rem;
+      padding-bottom: 1.4rem;
+    }
+
+    @include media-query('small') {
+      font-size: 1.8rem;
+    }
+
+    @include media-query('medium') {
+      padding: 2rem 3.5rem;
+      padding-bottom: 1.9rem;
+    }
+  }
+
+  &--fetching &__form-submit button,
+  &--fetching#{&}--fixed &__form-submit button {
+    color: transparent;
+
+    svg {
+      fill: transparent;
+    }
+  }
+
+  &--fixed &__form-submit button {
+    background-color: transparent;
+    border-color: $grey-faded-color;
+    color: $grey-medium-color;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    svg {
+      display: none;
+      fill: $grey-medium-color;
+      height: 0.9rem;
+      margin-left: 0.7rem;
+      width: 2.3rem;
+
+      @include media-query('medium') {
+        display: inline-block;
+      }
+
+      @include media-query('large') {
+        margin-left: 1rem;
+      }
+    }
+
+    @include media-query('x-small') {
+      font-size: 1.3rem;
+      padding: 1.5rem 2.5rem;
+      padding-bottom: 1.4rem;
+    }
+
+    @include media-query('large') {
+      font-size: 1.4rem;
+      padding: 2rem 3.5rem;
+      padding-bottom: 1.9rem;
+    }
+  }
+
+  &__loader {
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    transition: opacity $transition-speed, visibility 0s linear $transition-speed;
+    visibility: hidden;
+
+    & > div {
+      animation: rotate 0.75s linear infinite;
+      border: 0.3rem solid #fff;
+      border-bottom-color: transparent;
+      border-radius: 100%;
+      height: 2.5rem;
+      width: 2.5rem;
+
+      @include media-query('x-small') {
+        height: 3.5rem;
+        width: 3.5rem;
+      }
+    }
+  }
+
+  &--fetching &__loader {
+    opacity: 1;
+    transition: opacity $transition-speed linear 0.1s, visibility 0s;
+    visibility: visible;
+  }
+
+  &--fixed &__loader > div {
+    border-color: $grey-medium-color;
+    border-bottom-color: transparent;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  &__phone {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    right: 3.5rem;
+    top: 50%;
+    transform: translate3d(-3rem, -50%, 0);
+    transition: opacity $transition-speed, transform $transition-speed, visibility 0s linear $transition-speed;
+    visibility: hidden;
+
+    svg {
+      fill: $grey-dark-color;
+      height: 1.6rem;
+      width: 1.6rem;
+
+      @include media-query('medium') {
+        height: 1.8rem;
+        width: 1.8rem;
+      }
+
+      @include media-query('large') {
+        display: none;
+      }
+    }
+
+    span {
+      color: $grey-dark-color;
+      display: none;
+      font-family: $headline-font;
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 0.1rem;
+
+      @include media-query('large') {
+        display: inline-block;
+      }
+
+      @include media-query('x-large') {
+        font-size: 1.4rem;
+      }
+    }
+
+    @include media-query('small') {
+      display: block;
+    }
+
+    @include media-query('large') {
+      right: 5rem;
+    }
+  }
+
+  &--fixed &__phone {
+    opacity: 1;
+    transform: translate3d(0, -50%, 0);
+    transition: opacity $transition-speed linear 0.1s, transform $transition-speed linear 0.1s, visibility 0s;
+    visibility: visible;
+  }
+}

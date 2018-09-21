@@ -1,0 +1,58 @@
+extends: react-app
+plugins:
+  - fp
+rules:
+  brace-style:
+    - error
+  comma-dangle:
+    - error
+    - always-multiline
+  curly:
+    - error
+  eol-last:
+    - error
+    - always
+  eqeqeq:
+    - error
+    - always
+  fp/no-loops:
+    - error
+  fp/no-mutating-methods:
+    - error
+  fp/no-this:
+    - error
+  indent:
+    - error
+    - 2
+  jsx-quotes:
+    - error
+    - prefer-double
+  keyword-spacing:
+    - error
+    - before: true
+  no-console:
+    - error
+  no-const-assign:
+    - error
+  no-multiple-empty-lines:
+    - error
+    - max: 1
+  no-trailing-spaces:
+    - error
+  no-var:
+    - error
+  object-curly-spacing:
+    - error
+    - always
+  prefer-const:
+    - error
+  prefer-destructuring:
+    - error
+    - array: false
+      object: true
+  prefer-template:
+    - error
+  semi:
+    - error
+    - never
+  space-in-parens: off

@@ -1,0 +1,212 @@
+@import 'styles/config/config';
+
+.form-block {
+  margin-bottom: 5rem;
+
+  &--enter {
+    opacity: 0;
+  }
+
+  &--enter-active {
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+
+  &--exit {
+    opacity: 1;
+  }
+
+  &--exit-active {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  h3 {
+    font-family: $body-font;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    line-height: 1.4;
+    margin-bottom: 2.5rem;
+
+    @include media-query('x-small') {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    @include media-query('medium') {
+      font-size: 2.3rem;
+    }
+  }
+
+  h4 {
+    color: $primary-color;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+
+    @include media-query('x-small') {
+      font-size: 1.4rem;
+    }
+
+    @include media-query('medium') {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__field--error input {
+    border-color: red;
+  }
+
+  &__button {
+    border-color: $secondary-color;
+    color: $secondary-color;
+    margin-top: 4rem;
+    max-width: 17rem;
+    position: relative;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      background-color: $secondary-color;
+      color: #fff;
+    }
+
+    &:hover svg,
+    &:focus svg {
+      fill: #fff;
+      transform: translate3d(0.2rem, 0, 0);
+    }
+
+    &:hover &__loader > div,
+    &:focus &__loader > div {
+      border: 0.3rem solid #fff;
+      border-bottom-color: transparent;
+    }
+
+    &--fetching {
+      color: transparent;
+    }
+
+    &--fetching:hover,
+    &--fetching:focus {
+      color: transparent;
+    }
+
+    &--fetching:hover svg,
+    &--fetching:focus svg {
+      fill: transparent;
+    }
+
+    &--disabled {
+      border-color: $grey-color;
+      color: $grey-color;
+    }
+
+    &--disabled:hover,
+    &--disabled:focus {
+      cursor: not-allowed;
+      background-color: transparent;
+      border-color: $grey-color;
+      color: $grey-color;
+    }
+
+    &--disabled svg,
+    &--disabled:hover svg,
+    &--disabled:focus svg {
+      fill: $grey-color !important;
+      transform: translate3d(-0.1rem, 0, 0);
+    }
+
+    svg {
+      display: inline-block;
+      fill: $secondary-color;
+      margin-left: 0.7rem;
+      height: 0.8rem;
+      transform: translate3d(-0.1rem, 0, 0);
+      transition: fill $transition-speed, transform $transition-speed;
+      width: 2rem;
+
+      @include media-query('medium') {
+        height: 1rem;
+        width: 2.6rem;
+      }
+    }
+
+    &__loader {
+      left: 50%;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      transition: opacity $transition-speed, visibility 0s linear $transition-speed;
+      visibility: hidden;
+  
+      & > div {
+        animation: rotate 0.75s linear infinite;
+        border: 0.3rem solid $secondary-color;
+        border-bottom-color: transparent;
+        border-radius: 100%;
+        height: 2.5rem;
+        width: 2.5rem;
+  
+        @include media-query('x-small') {
+          height: 3rem;
+          width: 3rem;
+        }
+      }
+    }
+  
+    &--fetching &__loader {
+      opacity: 1;
+      transition: opacity $transition-speed linear 0.1s, visibility 0s;
+      visibility: visible;
+    }
+
+    @include media-query('medium') {
+      max-width: 25rem;
+    }
+  }
+
+  .help {
+    color: $grey-medium-color;
+    display: block;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: 1.7rem;
+
+    @include media-query('x-small') {
+      margin-top: 2rem;
+    }
+
+    @include media-query('medium') {
+      font-size: 1.2rem;
+      margin-top: 2.5rem;
+    }
+  }
+
+  &__disclaimer {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 3.5rem;
+    opacity: 0;
+    transition: opacity $transition-speed, visibility 0s linear $transition-speed;
+    visibility: hidden;
+
+    &--active {
+      opacity: 1;
+      transition: opacity $transition-speed linear 0.1s, visibility 0s;
+      visibility: visible;
+    }
+  }
+
+  @include media-query('x-small') {
+    margin-bottom: 6rem;
+  }
+
+  @include media-query('medium') {
+    margin-bottom: 8rem;
+  }
+}

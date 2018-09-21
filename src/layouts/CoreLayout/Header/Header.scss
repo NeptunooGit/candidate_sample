@@ -1,0 +1,206 @@
+@import 'styles/config/config';
+
+.header {
+  background-color: transparent;
+  border-bottom: 0.2rem solid $grey-light-color;
+  height: 7rem;
+  left: 0;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  &--with-hero {
+    border-bottom: none;
+    height: 6rem;
+    position: absolute;
+
+    @include media-query('x-small') {
+      height: 7rem;
+    }
+  }
+
+  &__inner {
+    height: 100%;
+    padding: 0 2.5rem;
+
+    @include media-query('x-small') {
+      padding: 0 3.5rem;
+    }
+
+    @include media-query('large') {
+      padding: 0 5rem;
+    }
+  }
+
+  &__left {
+    align-items: center;
+    display: flex;
+    float: left;
+    height: 100%;
+  }
+
+  &__right {
+    align-items: center;
+    display: flex;
+    float: right;
+    height: 100%;
+  }
+
+  &__logo {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  &__logo svg {
+    fill: $grey-dark-color;
+    height: 1.2rem;
+    width: 7.5rem;
+
+    @include media-query('medium') {
+      height: 1.4rem;
+      width: 8.7rem;
+    }
+  }
+
+  &--with-hero &__logo svg {
+    fill: #fff;
+    height: 1.4rem;
+    width: 8.7rem;
+
+    @include media-query('large') {
+      height: 1.8rem;
+      width: 11.2rem;
+    }
+  }
+
+  &__phone {
+    align-items: center;
+    background-color: $secondary-color;
+    border-radius: 50%;
+    bottom: 2rem;
+    box-shadow: 0.1rem 0.1rem 0.7rem 0 rgba(0, 0, 0, 0.3);
+    display: flex;
+    height: 4.5rem;
+    justify-content: center;
+    position: fixed;
+    right: 2rem;
+    text-decoration: none;
+    width: 4.5rem;
+
+    svg {
+      fill: #fff;
+      height: 1.7rem;
+      width: 1.7rem;
+    }
+
+    span {
+      color: $grey-dark-color;;
+      display: none;
+      font-family: $headline-font;
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: 0.1rem;
+      margin-left: 0.8rem;
+    }
+
+    @include media-query('x-small') {
+      bottom: 3rem;
+      height: 5rem;
+      right: 3rem;
+      width: 5rem;
+
+      svg {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+
+    @include media-query('medium') {
+      background-color: transparent;
+      border-radius: 0;
+      bottom: auto;
+      box-shadow: none;
+      display: inline-block;
+      height: auto;
+      position: relative;
+      right: auto;
+      width: auto;
+
+      svg {
+        display: none;
+      }
+
+      span {
+        display: inline-block;
+      }
+    }
+  }
+
+  &--with-hero &__phone {
+    @include media-query('medium') {
+      svg {
+        fill: #fff;
+      }
+
+      span {
+        color: #fff;
+      }
+    }
+  }
+
+  &__button {
+    border-color: $secondary-color;
+    color: $secondary-color;
+    margin-left: 3rem;
+
+    &:hover,
+    &:focus {
+      background-color: $secondary-color;
+      border-color: $secondary-color;
+      color: #fff;
+
+      svg {
+        fill: #fff;
+        transform: translate3d(0.2rem, -0.1rem, 0);
+      }
+    }
+
+    svg {
+      display: inline-block;
+      fill: $secondary-color;
+      height: 0.7rem;
+      margin-left: 0.5rem;
+      transform: translate3d(-0.1rem, -0.1rem, 0);
+      transition: transform $transition-speed;
+      width: 1.8rem;
+
+      @include media-query('medium') {
+        height: 0.8rem;
+        width: 2rem;
+      }
+    }
+  }
+
+  &--with-hero &__button {
+    border-color: #fff;
+    color: #fff;
+
+    &:hover,
+    &:focus {
+      border-color: $secondary-color;
+    }
+
+    svg {
+      fill: #fff;
+    }
+  }
+
+  @include media-query('x-small') {
+    height: 8rem;
+  }
+
+  @include media-query('large') {
+    height: 9rem;
+  }
+}

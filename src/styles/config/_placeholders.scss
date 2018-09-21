@@ -1,0 +1,43 @@
+%clearfix:after {
+  clear: both;
+  content: ' ';
+  display: table;
+}
+
+%vertical-align-self {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+%horizontal-align-self {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+%center-align-self {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%vertical-align-child {
+  align-items: center;
+  display: flex;
+}
+
+%horizontal-align-child {
+  display: flex;
+  justify-content: center;
+}
+
+%center-align-child {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+%standard-background {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
